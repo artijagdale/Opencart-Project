@@ -20,9 +20,9 @@ public class AddToCart_Product_PageObject {
 	
 
 	public AddToCart_Product_PageObject(WebDriver driver2) {
-	
-		this.driver=driver2;
+          this.driver=driver2;
 	}
+	
 	public WebElement searchEnter() {
 	return driver.findElement(search);
 	}
@@ -41,7 +41,7 @@ public class AddToCart_Product_PageObject {
 	
 	public WebElement SamsungClick() {
 	return driver.findElement(Samsung);
-		}
+	}
 	
 	public WebElement addtocartSamsungClick() {
 	return driver.findElement(addtocartsamsung);
@@ -53,7 +53,7 @@ public class AddToCart_Product_PageObject {
 	
 	public WebElement price2Check() {
 	return driver.findElement(price2);
-		}
+	}
 	
 	public WebElement totalItemBtnClick() {
 	return driver.findElement(totalItemBtn);

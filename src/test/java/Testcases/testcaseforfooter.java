@@ -20,39 +20,39 @@ public class testcaseforfooter extends baseclass {
 	 FOM.EnterEnquiry().sendKeys(constant.Enquiry);
 	 FOM.SelectSubmit().click();
 	 
-	FOM.SelectReturns().click();
-	FOM.EnterFirstName().sendKeys(constant.FirstName);
-	FOM.EnterLastName().sendKeys(constant.LastName);
-	FOM.EnterEMail().sendKeys(constant.EMail);
-	FOM.EnterTelephone().sendKeys(constant.Telephone);
-	FOM.EnterOrderID().sendKeys(constant.OrderID);
-	FOM.SelectCalender().click();
-	FOM.Selectnext().click();
-	FOM.SelectDate().click();
-	FOM.EnterProductName().sendKeys(constant.ProductName);
-	FOM.EnterProductCode().sendKeys(constant.ProductCode);
-	FOM.SelectReasonForReturn().click();
-	FOM.SelectSubmit1().click();
+	 FOM.SelectReturns().click();
+	 FOM.EnterFirstName().sendKeys(constant.FirstName);
+	 FOM.EnterLastName().sendKeys(constant.LastName);
+	 FOM.EnterEMail().sendKeys(constant.EMail);
+	 FOM.EnterTelephone().sendKeys(constant.Telephone);
+	 FOM.EnterOrderID().sendKeys(constant.OrderID);
+	 FOM.SelectCalender().click();
+	 FOM.Selectnext().click();
+	 FOM.SelectDate().click();
+	 FOM.EnterProductName().sendKeys(constant.ProductName);
+	 FOM.EnterProductCode().sendKeys(constant.ProductCode);
+	 FOM.SelectReasonForReturn().click();
+	 FOM.SelectSubmit1().click();
 	
-	FOM.Selectbrands().click();
-	FOM.SelectApple().click();
+	 FOM.Selectbrands().click();
+	 FOM.SelectApple().click();
 	
-	FOM.SelectGiftCertificates().click();
-	FOM.EnterRecipientsName().sendKeys(constant.RecipientsName);
-	FOM.EnterRecipientsEMail().sendKeys(constant.RecipientsEMail);
-    FOM.EnterYourName1().sendKeys(constant.YourName1);
-    FOM.EnterYourEMail().sendKeys(constant.YourEMail);
-    FOM.SelectGiftCertificateTheme().click();
-    FOM.EnterMessage().sendKeys(constant.Message);
-    FOM.SelectCheckBox().click();
-    FOM.SelectContinue().click();
+	 FOM.SelectGiftCertificates().click();
+	 FOM.EnterRecipientsName().sendKeys(constant.RecipientsName);
+	 FOM.EnterRecipientsEMail().sendKeys(constant.RecipientsEMail);
+     FOM.EnterYourName1().sendKeys(constant.YourName1);
+     FOM.EnterYourEMail().sendKeys(constant.YourEMail);
+     FOM.SelectGiftCertificateTheme().click();
+     FOM.EnterMessage().sendKeys(constant.Message);
+     FOM.SelectCheckBox().click();
+     FOM.SelectContinue().click();
     
-    FOM.SelectAffiliate().click();
-    FOM.EntertAffiliateEMail().sendKeys(constant.AffiliateEMail);
-    FOM.EnterPassword().sendKeys(constant.Password2);
-    FOM.SelectLogin().click();
+     FOM.SelectAffiliate().click();
+     FOM.EntertAffiliateEMail().sendKeys(constant.AffiliateEMail);
+     FOM.EnterPassword().sendKeys(constant.Password2);
+     FOM.SelectLogin().click();
     
-    FOM.SelectSpecials().click();
+     FOM.SelectSpecials().click();
  
  }
 }

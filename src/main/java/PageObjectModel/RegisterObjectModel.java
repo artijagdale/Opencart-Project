@@ -20,13 +20,11 @@ public class RegisterObjectModel {
 	private By PrivacyPolicyCheckbox=By.xpath("//input[@name='agree']");
 	
 	
-   public RegisterObjectModel(WebDriver driver2) {
+    public RegisterObjectModel(WebDriver driver2) {
 		this.driver=driver2;
 	}
 
-
-
-	public WebElement SelectMyAccount() {
+    public WebElement SelectMyAccount() {
 		
 	return driver.findElement(MyAccount);	
 	}

@@ -13,9 +13,6 @@ public class LoginObjectModel {
 	private By Password=By.xpath("//input[@id='input-password']");
 	private By Login1=By.xpath("//input[@class='btn btn-primary']");
 	
-	
-	
-	
 	public LoginObjectModel(WebDriver driver2) {
 	 this.driver=driver2;
 	}

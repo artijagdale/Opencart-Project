@@ -30,7 +30,7 @@ public class testcaseforHeader extends baseclass {
 	 helpingmethods.mouseover(driver, HOM.Components());
 	 HOM.SelectMonitors().click();
 	 Thread.sleep(5000);
-	// HOM.SelectShowAllComponents().click();
+	
 	 helpingmethods.doubleclick(driver, HOM.Tablets());
 	 helpingmethods.doubleclick(driver, HOM.Software());
 	 helpingmethods.doubleclick(driver, HOM.PhonesPDAs());

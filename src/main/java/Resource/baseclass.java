@@ -27,12 +27,7 @@ public class baseclass {
 		
 	 driver=new ChromeDriver();	
 	}
-	
-	else if(browserName.equalsIgnoreCase("Firefox")) {
-	
-	//firefox code	
-	}	
-	
+		
 	else {
 		
 	System.out.println("Please enter valid browser name");	

@@ -14,8 +14,7 @@ public class PasswordObjectModel {
     
     
     public PasswordObjectModel(WebDriver driver2) {
-		
-    	this.driver=driver2;
+		     this.driver=driver2;
 	}
 
 	public WebElement selectForgottenPassword() {
