@@ -22,4 +22,7 @@ public static String YourEMail="ABC@gmail.com";
 public static String Message="Happy Birthday";
 public static String AffiliateEMail="AX@gmail.com";
 public static String Password2="012345";
+public static String search="iphone";
+public static String search1="samsung";
+
 }
