@@ -11,58 +11,63 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import PageObjectModel.AddToCart_Product_PageObject;
 import Resource.baseclass;
+import Resource.constant;
+import Resource.helpingmethods;
 
 public class testcaseforproductsfeatured extends baseclass {
 	@Test
 	public void verifyproductsaddtocartprice() throws InterruptedException {
 		
-	driver.findElement(By.xpath("//input[@name='search']")).sendKeys("Macbook");
-    driver.findElement(By.xpath("//i[@class='fa fa-search']")).click();
-    
-    
-    
-    List<WebElement>a=driver.findElements(By.xpath("//h4"));
-    
-   
-    String MacbookText="";
-    for(int i=0; i<a.size(); i++) {
-    String text=a.get(i).getText();
-    if(text.equalsIgnoreCase("Macbook")) {
-   String MacbookCost=driver.findElements(By.xpath("//p[@class='price']")).get(i).getText();
-   String[]z=MacbookCost.split("\\s+");
-   String ab=z[0];
-   String removeDollar=ab;
-   String Afterremovingdollar=removeDollar.replaceAll("[$,]", "");
-   double d=Double.parseDouble(Afterremovingdollar);
-   
-  System.out.println(d);
-  
- // driver.findElements(By.xpath("//span[contains(text(),'Add to Cart')]")).get(i).click();
-  
- /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'Add to Cart')]"))); 
-  driver.findElements(By.xpath("//span[contains(text(),'Add to Cart')]")).get(i).click();
-  //  wait.until(ExpectedConditions.elementToBeClickable((By) element));
-  
-/*  Thread.sleep(10000);  
-   
-  List<WebElement> element=driver.findElements(By.xpath("//span[contains(text(),'Add to Cart')]"));
-  
-  JavascriptExecutor js=(JavascriptExecutor)driver;
-  ((JavascriptExecutor)driver).executeScript("arguments[0].click();",element);
-  ((WebElement) driver.findElements(By.xpath("//span[contains(text(),'Add to Cart')]"))).click();
-  
-  // WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(100));
-  // wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//span[contains(text(),'Add to Cart')]")))).get(i).click();
-  */
- /*  driver.findElement(By.xpath("//input[@name='search']")).clear();
-   driver.findElement(By.xpath("//input[@name='search']")).sendKeys("iphone");
-   driver.findElement(By.xpath("//i[@class='fa fa-search']")).click();
-   */
-    }
-    }
+		AddToCart_Product_PageObject mp = new AddToCart_Product_PageObject(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		mp.searchEnter().sendKeys(constant.search); //search text enter(iphone)
+		mp.searchBtnClick().click();//search button click
+		mp.iphoneclick().click();
+		Thread.sleep(5000);
+		
+		//For 1st product price
+		String price1 =mp.priceCheck().getText();
+		double d1=helpingmethods.productPriceHandle(price1);
+		
+	    mp.addtocartClick().click();  //add to cart click
 	
-	}
+		mp.searchEnter().clear();  //to clear previous entered text
+		
+		mp.searchEnter().sendKeys(constant.search1); //search text enter(samsung)
+		mp.searchBtnClick().click();  //search button click
+		
+		//For 2nd product price
+		String price2 =mp.price2Check().getText();
+		double d2=helpingmethods.productPriceHandle(price2);
+		
+        mp.SamsungClick().click();
+        Thread.sleep(5000);
+		mp.addtocartSamsungClick().click();  //add to cart click
+        
+	
+		//total price of products
+		double add=d1+d2;
+		String actualPriceconvert=Double.toString(add); //convert double to string for adding $
+		String actualPrice=("$"+actualPriceconvert);
+		System.out.println("Actual Addition of price:"+actualPrice);
+		Thread.sleep(2000);
 
+		mp.totalItemBtnClick().click(); //Total item click
+		String expectedPriceCart=mp.expectedTotalPriceCheck().getText();
+		double d3=helpingmethods.productPriceHandle(expectedPriceCart);//Expected Price from cart
+		String expectedPriceConvert=Double.toString(d3); //convert expected price into double
+		String expectedPrice=("$"+expectedPriceConvert);
+		
+		System.out.println("Expected addition :"+expectedPrice);
+		if(actualPrice.equals(expectedPrice))
+		{
+			System.out.println("Pass");
+		}
+		else
+		{
+			System.out.println("Fail");
+		}     
+		}
 }
